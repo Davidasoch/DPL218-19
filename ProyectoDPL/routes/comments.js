@@ -2,11 +2,10 @@ module.exports = {
   getComments(req, res,store) {
     res.status(200).send(store.dishes[req.params.id].comments)
   },
-  addComment(req, res,store) {
+  addComments(req, res,store) {
     let addcomment = req.body
-    let newid = store.posts.length
-    let comments = store.dishes[req.params.id].comments
-    comments.push(addcomment)
+    let newid = store.dishes[req.params.id].comments.length
+    store.dishes[req.params.id].comments.push(addcomment);
     res.status(201).send({id:newid})
   },
   updateComment(req, res,store) {
