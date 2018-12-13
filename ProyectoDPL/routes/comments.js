@@ -14,7 +14,7 @@ module.exports = {
     res.status(200).send(store.dishes[req.params.newid])
   },
   removeComment(req, res,store) {
-    store.dishes[req.params.id].comments.splice(req.params.newid,1)
+    store.dishes[req.params.id].comments.splice(req.params.commentsId,1)
     res.status(204).send()
   }
 }
